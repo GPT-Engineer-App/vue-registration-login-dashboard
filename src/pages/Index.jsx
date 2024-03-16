@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChakraProvider, Box, VStack, FormControl, FormLabel, Input, Button, Heading, Text, Divider } from "@chakra-ui/react";
 import { FaUserCircle, FaLock, FaEnvelope, FaHome, FaSignInAlt, FaUserPlus, FaGoogle, FaLinkedin, FaGithub, FaSave } from "react-icons/fa";
 
 const Index = () => {
+  const [profilePicture, setProfilePicture] = useState(null);
+
+  const handleProfilePictureChange = (e) => {
+    setProfilePicture(e.target.files[0]);
+  };
   return (
     <ChakraProvider>
       <Box p={8}>
@@ -62,12 +67,21 @@ const Index = () => {
           <Text>Welcome, [User Name]!</Text>
           <Box p={4} shadow="md" borderWidth="1px">
             <Heading size="md">User Details</Heading>
+            {profilePicture && (
+              <Box mt={4}>
+                <img src={URL.createObjectURL(profilePicture)} alt="Profile Picture" />
+              </Box>
+            )}
             <Text>
               <FaEnvelope /> Email: [User Email]
             </Text>
           </Box>
 
           <Heading size="md">Update Profile</Heading>
+          <FormControl id="profilePictureUpdate">
+            <FormLabel>Profile Picture</FormLabel>
+            <Input type="file" accept="image/*" onChange={handleProfilePictureChange} />
+          </FormControl>
           <FormControl id="nameUpdate">
             <FormLabel>Name</FormLabel>
             <Input type="text" placeholder="John Doe" />
