@@ -43,6 +43,9 @@ const Index = () => {
           <Button leftIcon={<FaSignInAlt />} colorScheme="blue" variant="solid">
             Login
           </Button>
+          <Button variant="link" colorScheme="blue" size="sm" onClick={() => (window.location.href = "/forgot-password")}>
+            Forgot Password?
+          </Button>
           <Button leftIcon={<FaGoogle />} colorScheme="red" variant="solid">
             Login with Google
           </Button>
