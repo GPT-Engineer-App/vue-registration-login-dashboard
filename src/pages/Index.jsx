@@ -1,6 +1,6 @@
 import React from "react";
 import { ChakraProvider, Box, VStack, FormControl, FormLabel, Input, Button, Heading, Text, Divider } from "@chakra-ui/react";
-import { FaUserCircle, FaLock, FaEnvelope, FaHome, FaSignInAlt, FaUserPlus, FaGoogle, FaLinkedin, FaSave } from "react-icons/fa";
+import { FaUserCircle, FaLock, FaEnvelope, FaHome, FaSignInAlt, FaUserPlus, FaGoogle, FaLinkedin, FaGithub, FaSave } from "react-icons/fa";
 
 const Index = () => {
   return (
@@ -25,6 +25,9 @@ const Index = () => {
           <Button leftIcon={<FaLinkedin />} colorScheme="linkedin" variant="solid">
             Register with LinkedIn
           </Button>
+          <Button leftIcon={<FaGithub />} colorScheme="gray" variant="solid">
+            Register with GitHub
+          </Button>
 
           <Divider my={6} />
 
@@ -39,6 +42,15 @@ const Index = () => {
           </FormControl>
           <Button leftIcon={<FaSignInAlt />} colorScheme="blue" variant="solid">
             Login
+          </Button>
+          <Button leftIcon={<FaGoogle />} colorScheme="red" variant="solid">
+            Login with Google
+          </Button>
+          <Button leftIcon={<FaLinkedin />} colorScheme="linkedin" variant="solid">
+            Login with LinkedIn
+          </Button>
+          <Button leftIcon={<FaGithub />} colorScheme="gray" variant="solid">
+            Login with GitHub
           </Button>
 
           <Divider my={6} />
