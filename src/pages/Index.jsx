@@ -1,6 +1,6 @@
 import React from "react";
 import { ChakraProvider, Box, VStack, FormControl, FormLabel, Input, Button, Heading, Text, Divider } from "@chakra-ui/react";
-import { FaUserCircle, FaLock, FaEnvelope, FaHome, FaSignInAlt, FaUserPlus } from "react-icons/fa";
+import { FaUserCircle, FaLock, FaEnvelope, FaHome, FaSignInAlt, FaUserPlus, FaGoogle, FaLinkedin, FaSave } from "react-icons/fa";
 
 const Index = () => {
   return (
@@ -8,24 +8,22 @@ const Index = () => {
       <Box p={8}>
         <VStack spacing={4} align="stretch">
           <Heading size="lg">Register</Heading>
-          <FormControl id="name">
-            <FormLabel>Name</FormLabel>
-            <Input type="text" placeholder="John Doe" />
-          </FormControl>
-          <FormControl id="email">
+          <FormControl id="emailRegister">
             <FormLabel>Email</FormLabel>
             <Input type="email" placeholder="johndoe@example.com" />
           </FormControl>
-          <FormControl id="address">
-            <FormLabel>Address</FormLabel>
-            <Input type="text" placeholder="123 Main St" />
-          </FormControl>
-          <FormControl id="password">
+          <FormControl id="passwordRegister">
             <FormLabel>Password</FormLabel>
             <Input type="password" />
           </FormControl>
           <Button leftIcon={<FaUserPlus />} colorScheme="teal" variant="solid">
-            Register
+            Register with Email
+          </Button>
+          <Button leftIcon={<FaGoogle />} colorScheme="red" variant="solid">
+            Register with Google
+          </Button>
+          <Button leftIcon={<FaLinkedin />} colorScheme="linkedin" variant="solid">
+            Register with LinkedIn
           </Button>
 
           <Divider my={6} />
@@ -47,19 +45,25 @@ const Index = () => {
 
           <Heading size="lg">Dashboard</Heading>
           <Text>Welcome, [User Name]!</Text>
-          {/* User details would be displayed here after login */}
           <Box p={4} shadow="md" borderWidth="1px">
             <Heading size="md">User Details</Heading>
             <Text>
-              <FaUserCircle /> Name: [User Name]
-            </Text>
-            <Text>
               <FaEnvelope /> Email: [User Email]
             </Text>
-            <Text>
-              <FaHome /> Address: [User Address]
-            </Text>
           </Box>
+
+          <Heading size="md">Update Profile</Heading>
+          <FormControl id="nameUpdate">
+            <FormLabel>Name</FormLabel>
+            <Input type="text" placeholder="John Doe" />
+          </FormControl>
+          <FormControl id="addressUpdate">
+            <FormLabel>Address</FormLabel>
+            <Input type="text" placeholder="123 Main St" />
+          </FormControl>
+          <Button leftIcon={<FaSave />} colorScheme="blue" variant="solid">
+            Save Changes
+          </Button>
         </VStack>
       </Box>
     </ChakraProvider>
